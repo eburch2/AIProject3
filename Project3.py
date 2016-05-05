@@ -16,8 +16,9 @@ def main():
     
     testFileName = "test.jpg"
     
-    args = ["Project3.py", getcwd() + "\\" + testFileName]
-    #args = sys.argv
+	#for hardcoding files
+    #args = ["Project3.py", getcwd() + "\\" + testFileName]
+    args = sys.argv
     
     testFileDirectory = getcwd() + "\\" + testFileName
     
@@ -55,6 +56,8 @@ def main():
         allImages, allClassifications = loadAllImages()
         clf = teachSVM(allImages, allClassifications)
         saveSVM(clf)
+		print("SVM Trained. Exiting.")
+		exit()
         
     # Use these for validation
     #folds = allClassifications.size
