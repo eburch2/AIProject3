@@ -16,11 +16,9 @@ def main():
     
     testFileName = "test.jpg"
     
-	#for hardcoding files
+    #for hardcoding files
     #args = ["Project3.py", getcwd() + "\\" + testFileName]
-    args = sys.argv
-    
-    testFileDirectory = getcwd() + "\\" + testFileName
+    args = sys.argv    
     
     if (len(args) != 2):
         print("Please run the program with a single command-line argument including a filepath to an image")
@@ -29,6 +27,8 @@ def main():
         exit()
     else:
         testFileName = sys.argv[1]
+		
+    testFileDirectory = testFileName
         
     # Set this to false to re-train SVM. Otherwise true will load the pickled SVM
     isSVMTrained = True
@@ -56,8 +56,8 @@ def main():
         allImages, allClassifications = loadAllImages()
         clf = teachSVM(allImages, allClassifications)
         saveSVM(clf)
-		print("SVM Trained. Exiting.")
-		exit()
+        print("SVM Trained. Exiting.")
+        exit()
         
     # Use these for validation
     #folds = allClassifications.size
@@ -66,16 +66,14 @@ def main():
     #validate(allImages, allClassifications, folds)     
     
     # Use for individual testing of a file
-    '''
-    actualLabel = "Dollar"
+    #actualLabel = "Dollar"
     predictedLabel = classifyImage(testFileDirectory, clf)[0]
-    if(actualLabel == predictedLabel):
-        print("Correct Match! Successfully labeled: " + predictedLabel)
-    else:
-        print("Incorrect Match! Actual: " + actualLabel + ", predicted: " + predictedLabel)
+    #if(actualLabel == predictedLabel):
+    #    print("Correct Match! Successfully labeled: " + predictedLabel)
+    #else:
+    #    print("Incorrect Match! Actual: " + actualLabel + ", predicted: " + predictedLabel)
         
     print("The image is predicted to be: " + predictedLabel)      
-    '''
     
     # Use this for viewing pleasures
     '''    
@@ -154,10 +152,9 @@ def teachSVM(trainingSet, classifications):
 
 # In[189]:
 
-# Repeated for referencing
-#FOLDER_NAMES = "01", "02", "03", "04", "05"
-#CLASSIFICATIONS = "Smile", "Hat", "Hashtag", "Heart", "Dollar"
-#TRAINING_FOLDER = "TRAINING"
+FOLDER_NAMES = "01", "02", "03", "04", "05"
+CLASSIFICATIONS = "Smile", "Hat", "Hashtag", "Heart", "Dollar"
+TRAINING_FOLDER = "TRAINING"
 
 def loadAllImages():
     
@@ -336,6 +333,9 @@ def threshold(bitmap):
 
 
 # In[205]:
+
+import warnings
+warnings.filterwarnings("ignore")
 
 main()
 

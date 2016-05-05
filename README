@@ -1,22 +1,25 @@
-How to get this to run:
-
 ~~ Installing ~~
-pip install these libraries please (I have no idea how to pip install, I did this on IPython Notebooks)
+Installation from scratch:
 
-Libraries used:
-from glob import glob
-from os import getcwd
-from os.path import join
-from sklearn import svm
-from sklearn import preprocessing
-import numpy as np
-import math as math
-from scipy import misc
-from scipy import ndimage
-from PIL import Image
-import matplotlib.pyplot as plt
-import sys
+To get pip:
+sudo apt-get install python-pip python-dev build-essential 
 
+Consult for additional dependencies before installing Pillow.
+http://pillow.readthedocs.io/en/3.1.x/installation.html
+
+For me I had to do: sudo apt-get install libtiff5-dev libjpeg8-dev zlib1g-dev libfreetype6-dev liblcms2-dev libwebp-dev tcl8.6-dev tk8.6-dev python-tk
+
+pip install Pillow
+sudo apt-get install python-matplotlib
+pip install sklearn
+pip install scipy
+
+python Project3.py TEACH_SVM
+
+Run TEACH_SVM just once, it doesn't seem to like to use imported pkl files, so just rewrite over them. Make sure TRAINING folder is in the working directory!
+
+Now, feel free to run anyway you like:
+python Project3.py file_path
 ~~ Running ~~
 The code has support for command-line arguments but I can't test them because I can't get it to run on GL without the packages. 
 Ideally, it would be run as:
