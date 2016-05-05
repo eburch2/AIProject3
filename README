@@ -1,0 +1,36 @@
+How to get this to run:
+
+~~ Installing ~~
+pip install these libraries please (I have no idea how to pip install, I did this on IPython Notebooks)
+
+Libraries used:
+from glob import glob
+from os import getcwd
+from os.path import join
+from sklearn import svm
+from sklearn import preprocessing
+import numpy as np
+import math as math
+from scipy import misc
+from scipy import ndimage
+from PIL import Image
+import matplotlib.pyplot as plt
+import sys
+
+~~ Running ~~
+The code has support for command-line arguments but I can't test them because I can't get it to run on GL without the packages. 
+Ideally, it would be run as:
+
+python Project3.py FILE_DIRECTORY
+
+where FILE_DIRECTORY is an acceptable file directory. If this doesn't work, and I really hope it does, there is also support for the file directory to be hardcoded in.
+
+~~ Additional Notes ~~
+Additional features include retraining the SVM and commented out functions like k-fold validation and displaying the image can be found in main()
+
+"python Project3.py TEACH_SVM"
+
+This should reteach the SVM from the TRAINING folder
+
+
+
